@@ -1,0 +1,232 @@
+﻿<Page x:Class="DronTaxi.MainAction.Profile.PersanalDataPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DronTaxi.MainAction.Profile"
+      xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PersanalDataPage">
+
+    <Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="0.8*"/>
+			<RowDefinition Height="12*"/>
+		</Grid.RowDefinitions>
+
+
+		<Grid Grid.Row="0"
+			  HorizontalAlignment="Right"
+			  Margin="15 0">
+			<Button x:Name="EditBtn"
+					Width="150"
+					Click="EditBtn_Click"
+					Style="{StaticResource simpleBlueButton}">
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="4*"/>
+					</Grid.ColumnDefinitions>
+					<Image Source="pack://application:,,,/Resources/icon/edit.png"
+						   HorizontalAlignment="Left"
+						   Grid.Column="0"
+						   Margin="5 0"/>
+					<TextBlock Grid.Column="1" Text="Редактирование"/>
+				</Grid>
+			</Button>
+		</Grid>
+		
+		<Grid Grid.Row="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1.5*"/>
+				<ColumnDefinition Width="2*"/>
+				<ColumnDefinition Width="2*"/>
+			</Grid.ColumnDefinitions>
+			
+			
+			<StackPanel Grid.Column="0"
+					VerticalAlignment="Top"
+					Margin="25 50">
+				<Ellipse Width="120" Height="120">
+					<Ellipse.Fill>
+						<ImageBrush ImageSource="pack://application:,,,/Resources/img/clear-prof.png"
+								Stretch="UniformToFill"
+								x:Name="UserPhoto"/>
+					</Ellipse.Fill>
+				</Ellipse>
+				<Grid>
+					<StackPanel>
+						<Label Content="Логин"
+						   FontSize="14"
+						   Foreground="WhiteSmoke"
+						   />
+						<Border BorderThickness="0, 0, 0, 1"
+							BorderBrush="#00BFFF"
+							Padding="20, 0">
+							<Label Content="Логин"
+							   x:Name="LoginField"
+							   FontSize="14"
+							   Foreground="White"
+							   />
+						</Border>
+					</StackPanel>
+				</Grid>
+			</StackPanel>
+
+
+			<StackPanel Grid.Column="1"
+					VerticalAlignment="Top">
+				<StackPanel Margin="15, 5">
+					<Label Content="Фамилия"
+						   FontSize="14"
+						   Foreground="WhiteSmoke"
+						   />
+					<Border BorderThickness="0, 0, 0, 1"
+							BorderBrush="#00BFFF"
+							Padding="20, 0">
+						<Label Content="Фамилия"
+							   x:Name="LastNameField"
+							   FontSize="14"
+							   Foreground="White"
+							   />
+					</Border>
+				</StackPanel>
+
+				<StackPanel Margin="15, 5">
+					<Label Content="Имя"
+						   FontSize="14"
+						   Foreground="WhiteSmoke"
+						   />
+					<Border BorderThickness="0, 0, 0, 1"
+							BorderBrush="#00BFFF"
+							Padding="20, 0">
+						<Label Content="Имя"
+							   x:Name="FirstNameField"
+							   FontSize="14"
+							   Foreground="White"
+							   />
+					</Border>
+				</StackPanel>
+
+				<StackPanel Margin="15, 5">
+					<Label Content="Отчество"
+						   FontSize="14"
+						   Foreground="WhiteSmoke"
+						   />
+					<Border BorderThickness="0, 0, 0, 1"
+							BorderBrush="#00BFFF"
+							Padding="20, 0">
+						<Label Content="Отчество"
+							   x:Name="MiddleNameField"
+							   FontSize="14"
+							   Foreground="White"
+							   />
+					</Border>
+				</StackPanel>
+
+				<Grid Margin="15, 5">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="1*"/>
+						<ColumnDefinition Width="0.25*"/>
+						<ColumnDefinition Width="1*"/>
+					</Grid.ColumnDefinitions>
+
+					<StackPanel Grid.Column="0">
+						<Label Content="Дата рождения"
+							   FontSize="12"
+							   Foreground="WhiteSmoke"
+							   />
+						<Border BorderThickness="0, 0, 0, 1"
+								BorderBrush="#00BFFF"
+								VerticalAlignment="Center"
+								>
+							<Label Content="Дата рождения"
+							   x:Name="DataBirthField"
+							   FontSize="14"
+							   Foreground="White"
+							   />
+						</Border>
+					</StackPanel>
+
+					<StackPanel Grid.Column="2">
+						<Label Content="Пол"
+						   FontSize="12"
+						   Foreground="WhiteSmoke"
+						   />
+						<Border BorderThickness="0, 0, 0, 1"
+								BorderBrush="#00BFFF"
+								VerticalAlignment="Center">
+							<Label Content="Пол"
+								   x:Name="GenderField"
+								   FontSize="14"
+								   Foreground="White"
+								   VerticalContentAlignment="Center"
+								   VerticalAlignment="Center"
+								   />
+						</Border>
+					</StackPanel>
+				</Grid>
+
+			</StackPanel>
+
+
+			<StackPanel Grid.Column="2"
+					VerticalAlignment="top">
+				<StackPanel Margin="15, 5">
+					<Label Content="Email"
+						   FontSize="14"
+						   Foreground="WhiteSmoke"
+						   />
+					<Border BorderThickness="0, 0, 0, 1"
+							BorderBrush="#00BFFF"
+							Padding="20, 0">
+						<Label Content="Email"
+							   x:Name="EmailField"
+							   FontSize="14"
+							   Foreground="White"
+							   />
+					</Border>
+				</StackPanel>
+
+				<StackPanel Margin="15, 5">
+					<Label Content="Телефон"
+						   FontSize="14"
+						   Foreground="WhiteSmoke"
+						   />
+					<Border BorderThickness="0, 0, 0, 1"
+							BorderBrush="#00BFFF"
+							Padding="20, 0">
+						<Label Content="Телефон"
+							   x:Name="PhoneField"
+							   FontSize="14"
+							   Foreground="White"
+							   />
+					</Border>
+				</StackPanel>
+
+				<StackPanel Margin="15, 5">
+					<Label Content="Пароль"
+						   FontSize="14"
+						   Foreground="WhiteSmoke"
+						   />
+					<Border BorderThickness="0, 0, 0, 1"
+							BorderBrush="#00BFFF"
+							Padding="0">
+						<PasswordBox Password="password"
+									 x:Name="PasswordField"
+									 FontSize="14"
+									 Foreground="White"
+									 BorderBrush="#991199"
+									 mah:ControlsHelper.FocusBorderThickness="0"
+									 mah:ControlsHelper.FocusBorderBrush="#991199"
+									 mah:ControlsHelper.MouseOverBorderBrush="#991199"
+									 mah:TextBoxHelper.IsWaitingForData="True"
+									 Style="{StaticResource MahApps.Styles.PasswordBox.Button.Revealed}"
+									 />
+					</Border>
+				</StackPanel>
+			</StackPanel>
+		</Grid>
+	</Grid>
+</Page>

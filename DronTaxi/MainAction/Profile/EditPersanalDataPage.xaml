@@ -1,0 +1,242 @@
+﻿<Page x:Class="DronTaxi.MainAction.Profile.EditPersanalDataPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DronTaxi.MainAction.Profile"
+      xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PersanalDataPage">
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="10*"/>
+			<RowDefinition Height="1*"/>
+		</Grid.RowDefinitions>
+
+
+		<Grid Grid.Row="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1.5*"/>
+				<ColumnDefinition Width="2*"/>
+				<ColumnDefinition Width="2*"/>
+			</Grid.ColumnDefinitions>
+
+
+			<StackPanel Grid.Column="0"
+					VerticalAlignment="Top"
+					Margin="25">
+				<Ellipse Width="120" Height="120">
+					<Ellipse.Fill>
+						<ImageBrush ImageSource="pack://application:,,,/Resources/img/clear-prof.png"
+									Stretch="UniformToFill"
+									x:Name="UserPhoto"/>
+					</Ellipse.Fill>
+				</Ellipse>
+				<Button x:Name="UpdatePhoto"
+						Click="UpdatePhoto_Click"
+						Content="Обновить"
+						Margin="25"
+						Height="30"
+						Style="{StaticResource simpleBlueButton}"/>
+				<Grid>
+					<StackPanel>
+						<TextBlock Text="Логин*"
+								   FontSize="14"
+								   Foreground="WhiteSmoke"
+								   />
+						<TextBox mah:ControlsHelper.CornerRadius="3"
+								 Style="{StaticResource MahApps.Styles.TextBox}"
+								 x:Name="LoginField"
+								 FontSize="14"
+								 Foreground="Black"
+								 />
+					</StackPanel>
+				</Grid>
+			</StackPanel>
+
+
+			<StackPanel Grid.Column="1"
+					VerticalAlignment="Top">
+				<StackPanel Margin="15, 5">
+					<TextBlock Text="Фамилия*"
+							   FontSize="14"
+							   Foreground="WhiteSmoke"
+							   />
+					<TextBox mah:ControlsHelper.CornerRadius="3"
+						     Style="{StaticResource MahApps.Styles.TextBox}"
+							 x:Name="LastNameField"
+							 FontSize="14"
+							 Foreground="Black"
+							 />
+				</StackPanel>
+
+				<StackPanel Margin="15, 5">
+					<TextBlock Text="Имя*"
+							   FontSize="14"
+							   Foreground="WhiteSmoke"
+							   />
+					<TextBox mah:ControlsHelper.CornerRadius="3"
+						     Style="{StaticResource MahApps.Styles.TextBox}"
+							 x:Name="FirstNameField"
+							 FontSize="14"
+							 Foreground="Black"
+							 />
+				</StackPanel>
+
+				<StackPanel Margin="15, 5">
+					<TextBlock Text="Отчество*"
+						   FontSize="14"
+						   Foreground="WhiteSmoke"
+						   />
+					<TextBox mah:ControlsHelper.CornerRadius="3"
+						     Style="{StaticResource MahApps.Styles.TextBox}"
+							 x:Name="MiddleNameField"
+							 FontSize="14"
+							 Foreground="Black"
+							 />
+				</StackPanel>
+
+				<Grid Margin="15, 5">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="1.5*"/>
+						<ColumnDefinition Width="0.25*"/>
+						<ColumnDefinition Width="1*"/>
+					</Grid.ColumnDefinitions>
+
+					<StackPanel Grid.Column="0">
+						<TextBlock Text="Дата рождения"
+								   FontSize="12"
+								   Foreground="WhiteSmoke"
+								   Margin="0, 0, 0, 10"
+								   />
+						<DatePicker x:Name="DataBirthField"
+									mah:ControlsHelper.CornerRadius="3"
+									Style="{StaticResource MahApps.Styles.DatePicker}"
+									/>
+					</StackPanel>
+
+					<StackPanel Grid.Column="2"
+								HorizontalAlignment="Right">
+						<TextBlock Text="Пол"
+								   FontSize="14"
+								   Foreground="WhiteSmoke"
+								   HorizontalAlignment="Left"
+								   Margin="0, 0, 0, 10"
+								   />
+						<StackPanel Orientation="Horizontal">
+							<CheckBox x:Name="MaleCheckBox"
+									  Checked="MaleCheckBox_Checked"
+									  mah:CheckBoxHelper.ForegroundChecked="LightSkyBlue"
+									  Style="{StaticResource MahApps.Styles.CheckBox}">
+								<TextBlock Text="M"
+										   Foreground="White"
+										   Margin="-2 0 10 0"/>
+							</CheckBox>
+							<CheckBox x:Name="FemaleCheckBox"
+									  Checked="FemaleCheckBox_Checked"
+									  mah:CheckBoxHelper.ForegroundChecked="LightSkyBlue"
+									  Style="{StaticResource MahApps.Styles.CheckBox}">
+								<TextBlock Text="Ж"
+										   Foreground="White"
+										   Margin="-2 0 10 0"/>
+							</CheckBox>
+						</StackPanel>
+					</StackPanel>
+				</Grid>
+
+			</StackPanel>
+
+
+			<StackPanel Grid.Column="2"
+					VerticalAlignment="top">
+				<StackPanel Margin="15, 5">
+					<TextBlock Text="Email*"
+						   FontSize="14"
+						   Foreground="WhiteSmoke"
+						   />
+					<TextBox mah:ControlsHelper.CornerRadius="3"
+						     Style="{StaticResource MahApps.Styles.TextBox}"
+							 x:Name="EmailField"
+							 FontSize="14"
+							 Foreground="Black"
+							 />
+				</StackPanel>
+
+				<StackPanel Margin="15, 5">
+					<TextBlock Text="Телефон*"
+						   FontSize="14"
+						   Foreground="WhiteSmoke"
+						   />
+					<TextBox mah:ControlsHelper.CornerRadius="3"
+							 mah:TextBoxHelper.Watermark="Введите номер (формат: 9 999-999-9999)"
+						     Style="{StaticResource MahApps.Styles.TextBox}"
+							 x:Name="PhoneField"
+							 FontSize="10"
+							 Foreground="Black"
+							 />
+				</StackPanel>
+
+				<StackPanel Margin="15, 5">
+					<TextBlock Text="Пароль*"
+						   FontSize="14"
+						   Foreground="WhiteSmoke"
+						   />
+
+					<PasswordBox x:Name="PasswordField"
+								 FontSize="14"
+								 Foreground="Black"
+								 mah:ControlsHelper.FocusBorderThickness="0"
+								 mah:ControlsHelper.CornerRadius="3"
+								 mah:TextBoxHelper.IsWaitingForData="True"
+								 Style="{StaticResource MahApps.Styles.PasswordBox.Button.Revealed}"
+								 />
+					
+				</StackPanel>
+				<StackPanel Margin="15, 5">
+					<TextBlock Text="Подтвердить пароль*"
+						   FontSize="14"
+						   Foreground="WhiteSmoke"
+						   />
+
+					<PasswordBox x:Name="ConfirmPasswordField"
+								 FontSize="14"
+								 Foreground="Black"
+								 mah:ControlsHelper.FocusBorderThickness="0"
+								 mah:ControlsHelper.CornerRadius="3"
+								 mah:TextBoxHelper.IsWaitingForData="True"
+								 Style="{StaticResource MahApps.Styles.PasswordBox.Button.Revealed}"
+								 />
+
+				</StackPanel>
+			</StackPanel>
+		</Grid>
+
+		<Grid Grid.Row="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="2.5*"/>
+				<ColumnDefinition Width="1*"/>
+			</Grid.ColumnDefinitions>
+			<Grid Grid.Column="1">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="1*"/>
+					<ColumnDefinition Width="1*"/>
+				</Grid.ColumnDefinitions>
+
+				<Button x:Name="Save"
+						Grid.Column="0"
+						Style="{StaticResource simpleGreenButton}"
+						Content="Сохранить"
+						Click="Save_Click"
+						Margin="5"/>
+				<Button x:Name="Cancel"
+						Grid.Column="1"
+						Style="{StaticResource simpleBlueButton}"
+						Content="Отмена"
+						Click="Cancel_Click"
+						Margin="5"/>
+			</Grid>
+		</Grid>
+	</Grid>
+</Page>

@@ -1,0 +1,85 @@
+﻿<mah:MetroWindow x:Class="DronTaxi.MainAction.MainWindow"
+				 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+				 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+				 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+				 xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+				 xmlns:local="clr-namespace:DronTaxi.MainAction"
+				 mc:Ignorable="d"
+				 Title="Dron Taxi"
+				 Height="550"
+				 Width="900"
+				 ResizeMode="NoResize"
+				 WindowStartupLocation="CenterScreen"
+				 Icon="pack://application:,,,/Resources/icon/Logo_Dron_Taxi.png">
+	
+	<Grid Background="#991199">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="1*"/>
+			<RowDefinition Height="10*"/>
+		</Grid.RowDefinitions>
+		
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="1*"/>
+			<ColumnDefinition Width="4*"/>
+		</Grid.ColumnDefinitions>
+
+		<!-- Logo -->
+		<Grid Grid.Row="0"
+			  Grid.Column="0"
+			  Background="#991199">
+			<StackPanel Orientation="Horizontal"
+						HorizontalAlignment="Center">
+				<Image Source="pack://application:,,,/Resources/icon/Logo_Dron_Taxi.png"
+						   Width="30"
+						   Height="30"/>
+				<Label Content="DRON TAXI"
+						   VerticalAlignment="Center"
+						   FontSize="16"
+						   Foreground="White"
+						   FontWeight="Bold"
+						   />
+			</StackPanel>
+		</Grid>
+		<!-- Logo -->
+		
+		
+		<!-- Navbar -->
+		<Grid Grid.Row="1"
+			  Grid.Column="0"
+			  Background="#991199 ">
+			<StackPanel x:Name="PrivsListView"
+						VerticalAlignment="Top"
+						HorizontalAlignment="Center"
+						Margin="0, 20">
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal"
+						HorizontalAlignment="Center"
+						VerticalAlignment="Bottom"
+						Margin="0, 10"
+						Cursor="Hand"
+						x:Name="ExitButton"
+						MouseLeftButtonDown="ExitButton_MouseLeftButtonDown">
+				<Image Source="pack://application:,,,/Resources/icon/exit.png"
+					   Width="20"/>
+				<Label Content="Выход"
+					   Foreground="White"
+					   Margin="10, 0"/>
+			</StackPanel>
+		</Grid>
+		<!-- Navbar -->
+
+		
+		<!-- Frame -->
+		<Frame Grid.Row="1"
+			   Grid.Column="1"
+			   Background="#800080"
+			   x:Name="MainFrame"
+			   NavigationUIVisibility="Hidden">
+		</Frame>
+		<!-- Frame -->
+		
+	</Grid>
+
+</mah:MetroWindow>

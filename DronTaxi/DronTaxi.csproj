@@ -1,0 +1,78 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\fonts\Roboto-Black.ttf" />
+    <None Remove="Resources\icon\add-button.png" />
+    <None Remove="Resources\icon\calendar.png" />
+    <None Remove="Resources\icon\closed-eye.png" />
+    <None Remove="Resources\icon\delete-grin.png" />
+    <None Remove="Resources\icon\delete.png" />
+    <None Remove="Resources\icon\edit-gray.png" />
+    <None Remove="Resources\icon\edit-table.png" />
+    <None Remove="Resources\icon\edit.png" />
+    <None Remove="Resources\icon\exit.png" />
+    <None Remove="Resources\icon\filter.png" />
+    <None Remove="Resources\icon\input-checkbox-check.png" />
+    <None Remove="Resources\icon\input-checkbox.png" />
+    <None Remove="Resources\icon\Logo Dron Taxi.png" />
+    <None Remove="Resources\icon\Logo_Dron_Taxi.png" />
+    <None Remove="Resources\icon\Logo_Dron_Taxi.svg" />
+    <None Remove="Resources\icon\manag-role.png" />
+    <None Remove="Resources\icon\manag-user.png" />
+    <None Remove="Resources\icon\open-eye.png" />
+    <None Remove="Resources\icon\profile.png" />
+    <None Remove="Resources\img\clear-prof.png" />
+    <None Remove="Resources\img\flying-taxi.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MahApps.Metro" Version="2.1.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\fonts\Roboto-Black.ttf" />
+    <Resource Include="Resources\icon\add-button.png" />
+    <Resource Include="Resources\icon\calendar.png" />
+    <Resource Include="Resources\icon\closed-eye.png" />
+    <Resource Include="Resources\icon\delete-grin.png" />
+    <Resource Include="Resources\icon\delete.png" />
+    <Resource Include="Resources\icon\edit-gray.png" />
+    <Resource Include="Resources\icon\edit-table.png" />
+    <Resource Include="Resources\icon\edit.png" />
+    <Resource Include="Resources\icon\exit.png" />
+    <Resource Include="Resources\icon\filter.png" />
+    <Resource Include="Resources\icon\input-checkbox-check.png" />
+    <Resource Include="Resources\icon\input-checkbox.png" />
+    <Resource Include="Resources\icon\Logo Dron Taxi.png" />
+    <Resource Include="Resources\icon\Logo_Dron_Taxi.png" />
+    <Resource Include="Resources\icon\manag-role.png" />
+    <Resource Include="Resources\icon\manag-user.png" />
+    <Resource Include="Resources\icon\open-eye.png" />
+    <Resource Include="Resources\icon\profile.png" />
+    <Resource Include="Resources\img\clear-prof.png" />
+    <Resource Include="Resources\img\flying-taxi.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,257 @@
+﻿<Page x:Class="DronTaxi.MainAction.Profile.RolesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DronTaxi.MainAction.Profile"
+      xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RolesPage">
+
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="1*"/>
+			<ColumnDefinition Width="1*"/>
+		</Grid.ColumnDefinitions>
+
+		<Border BorderBrush="#404040"
+				BorderThickness="0, 0, 1, 0"
+				Margin="0, 0, 0, 15">
+			
+			<Grid Margin="30 20">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="10*"/>
+				</Grid.RowDefinitions>
+
+				<TextBlock Text="Доступные роли"
+						   Grid.Row="0"
+						   Foreground="White"
+						   FontSize="16"
+						   FontWeight="Medium"/>
+
+				<DataGrid x:Name="AvailableRolesListView"
+						  Grid.Row="1"
+						  BorderThickness="1"
+						  BorderBrush="WhiteSmoke"
+						  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+						  ScrollViewer.VerticalScrollBarVisibility="Visible"
+						  Style="{StaticResource MahApps.Styles.DataGrid}"
+						  AutoGenerateColumns="False"
+						  AlternatingRowBackground="#991199"
+						  AlternationCount="2"
+						  CanUserAddRows="False"
+						  CanUserDeleteRows="False"
+						  RowBackground="#973E95"
+						  
+						  Foreground="White"
+						  HeadersVisibility="None"
+						  Background="#973E95"
+						  CurrentCellChanged="AvailableRolesListView_CurrentCellChanged">
+					<DataGrid.Columns>
+						<DataGridTemplateColumn Width="*">
+							<DataGridTemplateColumn.CellTemplate>
+								<DataTemplate>
+									<Border BorderThickness="0"
+												BorderBrush="#00bfff"
+												MouseEnter="Border_MouseEnter"
+												MouseLeave="Border_MouseLeave"
+												Cursor="Hand">
+										<Grid>
+											<Grid.ColumnDefinitions>
+												<ColumnDefinition Width="3*"/>
+												<ColumnDefinition Width="0.5*"/>
+											</Grid.ColumnDefinitions>
+
+											<Border BorderThickness="0, 0, 1, 0"
+															BorderBrush="#404040"
+															Margin="20 2.5"
+															Padding="0, 5"
+															Grid.Column="0">
+												<TextBlock Text="{Binding Name}"
+																	   Foreground="White"/>
+											</Border>
+											<Image Source="pack://application:,,,/Resources/icon/delete.png"
+															   Grid.Column="1"
+															   Width="15"/>
+										</Grid>
+									</Border>
+								</DataTemplate>
+							</DataGridTemplateColumn.CellTemplate>
+						</DataGridTemplateColumn>
+					</DataGrid.Columns>
+				</DataGrid>
+			</Grid>
+		</Border>
+
+		<Grid Grid.Column="1"
+			  Margin="15, 0, 0, 0">
+			<Grid Margin="20"
+				  x:Name="MoreInfoContainer"
+				  Visibility="Visible">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="5*"/>
+					<RowDefinition Height="5*"/>
+				</Grid.RowDefinitions>
+
+				<TextBlock x:Name="TemplateRoleName"
+						   Text="Роль: Администратор"
+						   Foreground="White"
+						   FontSize="16"
+						   Grid.Row="0"
+						   />
+
+				<Grid Grid.Row="1">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="*"/>
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="*"/>
+						<RowDefinition Height="*"/>
+					</Grid.RowDefinitions>
+
+
+					<StackPanel Margin="0, 10, 10, 10"
+								Grid.Row="0"
+								Grid.Column="0">
+						<Label Content="Системное имя"
+							   FontSize="10"
+							   Foreground="WhiteSmoke"
+							   />
+						<Border BorderThickness="0, 0, 0, 1"
+								BorderBrush="#00BFFF"
+								Padding="10, 0">
+							<Label Content="SysName"
+								   x:Name="RoleSysName"
+								   FontSize="12"
+								   Foreground="White"
+								   />
+						</Border>
+					</StackPanel>
+
+					<StackPanel Margin="10, 10, 0, 10"
+								Grid.Row="0"
+								Grid.Column="1">
+						<Label Content="Наименование"
+							   FontSize="10"
+							   Foreground="WhiteSmoke"
+							   />
+						<Border BorderThickness="0, 0, 0, 1"
+								BorderBrush="#00BFFF"
+								Padding="10, 0">
+							<Label Content="Name"
+								   x:Name="RoleName"
+								   FontSize="12"
+								   Foreground="White"
+								   />
+						</Border>
+					</StackPanel>
+
+
+					<StackPanel Margin="0, 10, 35, 10"
+								Grid.Row="1"
+								Grid.Column="0">
+						<Label Content="Дата начала"
+							   FontSize="10"
+							   Foreground="WhiteSmoke"
+							   />
+						<Border BorderThickness="0, 0, 0, 1"
+								BorderBrush="#00BFFF"
+								Padding="10, 0">
+							<Label Content="00.00.0000"
+								   x:Name="RoleStartDate"
+								   FontSize="12"
+								   Foreground="White"
+								   />
+						</Border>
+					</StackPanel>
+
+					<StackPanel Margin="10, 10, 35, 10"
+								Grid.Row="1"
+								Grid.Column="1">
+						<Label Content="Дата окончания"
+							   FontSize="10"
+							   Foreground="WhiteSmoke"
+							   />
+						<Border BorderThickness="0, 0, 0, 1"
+								BorderBrush="#00BFFF"
+								Padding="10, 0">
+							<Label Content="дд.мм.гггг"
+								   x:Name="RoleEndDate"
+								   FontSize="12"
+								   Foreground="White"
+								   />
+						</Border>
+					</StackPanel>
+				</Grid>
+
+				<Grid Grid.Row="2"
+					  Margin="0, 15">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="1*"/>
+						<RowDefinition Height="5*"/>
+					</Grid.RowDefinitions>
+
+					<TextBlock Text="Доступные функции"
+							   Grid.Row="0"
+							   Foreground="White"
+							   FontSize="16"
+							   FontWeight="Medium"/>
+
+					<DataGrid x:Name="AvailableFuncListView"
+							  Grid.Row="1"
+							  BorderThickness="1"
+							  BorderBrush="WhiteSmoke"
+							  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+							  ScrollViewer.VerticalScrollBarVisibility="Visible"
+							  Style="{StaticResource MahApps.Styles.DataGrid}"
+							  AutoGenerateColumns="False"
+							  AlternatingRowBackground="#991199"
+							  AlternationCount="2"
+							  CanUserAddRows="False"
+							  CanUserDeleteRows="False"
+							  RowBackground="#973E95"
+							  Foreground="White"
+							  HeadersVisibility="None"
+							  Background="#973E95">
+						<DataGrid.Columns>
+							<DataGridTemplateColumn Width="*">
+								<DataGridTemplateColumn.CellTemplate>
+									<DataTemplate>
+										<Border BorderThickness="0"
+												BorderBrush="#00bfff"
+												MouseEnter="Border_MouseEnter"
+												MouseLeave="Border_MouseLeave"
+												Cursor="Hand">
+											<Grid>
+												<Grid.ColumnDefinitions>
+													<ColumnDefinition Width="3*"/>
+													<ColumnDefinition Width="0.5*"/>
+												</Grid.ColumnDefinitions>
+
+												<Border BorderThickness="0, 0, 1, 0"
+															BorderBrush="#404040"
+															Margin="20 2.5"
+															Padding="0, 5"
+															Grid.Column="0">
+													<TextBlock Text="{Binding Name}"
+																	   Foreground="White"/>
+												</Border>
+												<Image Source="pack://application:,,,/Resources/icon/delete.png"
+															   Grid.Column="1"
+															   Width="15"/>
+											</Grid>
+										</Border>
+									</DataTemplate>
+								</DataGridTemplateColumn.CellTemplate>
+							</DataGridTemplateColumn>
+						</DataGrid.Columns>
+					</DataGrid>
+				</Grid>
+			</Grid>
+		</Grid>
+	</Grid>
+</Page>
